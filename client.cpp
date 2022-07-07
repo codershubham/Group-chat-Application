@@ -39,7 +39,7 @@ void connect_request(int *sockfd, struct sockaddr_in *server_addr)
         }
         server_addr->sin_family = AF_INET;
         server_addr->sin_port = htons(9034);
-        server_addr->sin_addr.s_addr = inet_addr("192.168.233.128");
+        server_addr->sin_addr.s_addr = inet_addr("10.0.0.1"); //add your machine ip address here
         memset(server_addr->sin_zero, 0, sizeof server_addr->sin_zero);
         
         if(connect(*sockfd, (struct sockaddr *)server_addr, sizeof(struct sockaddr)) == -1) {
